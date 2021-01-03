@@ -46,3 +46,4 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, 'Apagare el led azul');
     MiPuerto.write("F");
   }
+}
