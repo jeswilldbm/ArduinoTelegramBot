@@ -17,23 +17,43 @@ bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);
   var Mensaje = msg.text;
-  if (Mensaje == "Encender") {
-    console.log("encendiendo el led");
-    bot.sendMessage(chatId, 'ok santiago, Encendere el led');
+  if (Mensaje == "Encender Rojo") {
+    console.log("encendiendo el led rojo");
+    bot.sendMessage(chatId, 'Encendere el led Rojo');
     MiPuerto.write("H");
-  } else if (Mensaje == "Apagar") {
+  } else if (Mensaje == "Apagar Rojo") {
     console.log("apagar el led");
-    bot.sendMessage(chatId, 'ok santiago, Apagare el led');
+    bot.sendMessage(chatId, 'Apagare el led Rojo');
     MiPuerto.write("L");
   }
 });
 
-MiPuerto.setEncoding('utf8');
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+  console.log("El ID del char" + chatId);
+  var Mensaje = msg.text;
+  if (Mensaje == "Encender Amarillo") {
+    console.log("encendiendo el led amarillo");
+    bot.sendMessage(chatId, 'Encendere el led Amarillo');
+    MiPuerto.write("A");
+  } else if (Mensaje == "Apagar Amarillo") {
+    console.log("apagar el led Amarillo");
+    bot.sendMessage(chatId, 'Apagare el led Amarillo');
+    MiPuerto.write("B");
+  }
+});
 
-MiPuerto.on('data', function(data) {
-  console.log("Lo que entro es " + data);
-  if (data[0] == 'H') {
-    console.log("Boton Precionado");
-    bot.sendMessage(IdMiChat, "Se preciono el boton");
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+  console.log("El ID del char" + chatId);
+  var Mensaje = msg.text;
+  if (Mensaje == "Encender Azul") {
+    console.log("encendiendo el led azul");
+    bot.sendMessage(chatId, 'Encendere el led Azul');
+    MiPuerto.write("C");
+  } else if (Mensaje == "Apagar Azul") {
+    console.log("apagar el led Azul");
+    bot.sendMessage(chatId, 'Apagare el led Azul');
+    MiPuerto.write("D");
   }
 });
