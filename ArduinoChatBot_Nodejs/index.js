@@ -19,11 +19,11 @@ bot.on('message', (msg) => {
   var Mensaje = msg.text;
   if (Mensaje == "Encender") {
     console.log("encendiendo el led");
-    bot.sendMessage(chatId, 'Encendere el led');
+    bot.sendMessage(chatId, 'ok santiago, Encendere el led');
     MiPuerto.write("H");
   } else if (Mensaje == "Apagar") {
     console.log("apagar el led");
-    bot.sendMessage(chatId, 'Apagare el led');
+    bot.sendMessage(chatId, 'ok santiago, Apagare el led');
     MiPuerto.write("L");
   }
 });
