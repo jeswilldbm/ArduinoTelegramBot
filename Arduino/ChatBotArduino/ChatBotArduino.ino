@@ -1,41 +1,37 @@
-int LedRojo = 9;
-int LedAmarillo = 8;
-int LedAzul = 8;
+int RED = 9;
+int YELLOW = 8;
+int BLUE = 7;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(LedRojo, INPUT_PULLUP);
-  pinMode(LedAmarillo, INPUT_PULLUP);
-  pinMode(LedAzul, INPUT_PULLUP);
+  pinMode(RED, INPUT_PULLUP);
+  pinMode(YELLOW, INPUT_PULLUP);
+  pinMode(BLUE, INPUT_PULLUP);
 }
 
 void loop() {
 
+  
   if (Serial.available()) {
     char Letra = Serial.read();
-    if (Letra == 'H') {
-      digitalWrite(LedRojo, HIGH);
-    }
-    else if (Letra == 'L') {
-      digitalWrite(LedRojo, LOW);
-    }
-  }
-    if (Serial.available()) {
-    char Letra = Serial.read();
     if (Letra == 'A') {
-      digitalWrite(LedAmarillo, HIGH);
+      digitalWrite(RED, HIGH);
     }
     else if (Letra == 'B') {
-      digitalWrite(LedAmarillo, LOW);
+      digitalWrite(RED, LOW);
+    }
+    else if (Letra == 'C'){
+      digitalWrite (YELLOW, HIGH);
+    }
+        else if (Letra == 'D'){
+      digitalWrite (YELLOW, LOW);
+    }
+            else if (Letra == 'E'){
+      digitalWrite (BLUE, HIGH);
+    }
+            else if (Letra == 'F'){
+      digitalWrite (BLUE, LOW);
     }
   }
-    if (Serial.available()) {
-    char Letra = Serial.read();
-    if (Letra == 'C') {
-      digitalWrite(LedAzul, HIGH);
-    }
-    else if (Letra == 'D') {
-      digitalWrite(LedAzul, LOW);
-    }
-  }
+
 }
